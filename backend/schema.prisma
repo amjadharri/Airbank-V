@@ -1,0 +1,23 @@
+datasource amjad_test {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+
+model Transactions {
+  id  String    @unique
+  account String  
+  description  String?
+  category String?
+  reference String?
+  currency String?
+  amount Int?
+  status String?
+  transactionDate String?
+  createdAt String?
+  updatedAt String?
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
